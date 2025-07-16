@@ -39,6 +39,20 @@ int findTask(struct Task tasks[], int ID, int task_counter)
     return -1;
 }
 
+void addTask(struct Task tasks[], int* task_counter, int ID, char desc[MAX_LEN])
+{
+    if (*task_counter >= MAX_TASKS)
+    {
+        printf("TASKS ARE FULL PLEASE DELETE ONE!");
+        return;
+    }
+
+    tasks[*task_counter].id = ID;
+    strncpy(tasks[*task_counter].description, desc, MAX_LEN - 1);
+    tasks[*task_counter].description[MAX_LEN - 1] = '\0';
+    tasks[*task_counter].completed = false;
+}
+
 void deleteTask(struct Task tasks[], int *n, int ID) {
   
   	int i = findTask(tasks, ID, *n);
