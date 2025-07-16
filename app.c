@@ -114,7 +114,7 @@ int main()
 
             addTask(tasks, &task_counter, id, desc);
         }
-        else if (strcmp(mode, "delete") == 0)
+        else if (strcmp(mode, "del") == 0)
         {
             int id;
             printf("Enter task ID to delete: ");
